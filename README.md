@@ -6,3 +6,4 @@ Dionysus resources
 * https://mrzv.org/software/dionysus2/
 * https://mrzv.org/software/dionysus2/tutorial/basics.html
 * https://www.mrzv.org/software/dionysus2/tutorial/plotting.html
+* https://math.stackexchange.com/questions/2225790/how-does-one-construct-a-persistence-diagram-in-persistence-homology/2226666
