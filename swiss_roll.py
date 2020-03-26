@@ -14,3 +14,13 @@ Y = method.fit_transform(X)
 fig, ax = plt.subplots()
 ax.scatter(Y[:,0], Y[:,1], c=color, cmap=plt.cm.Spectral)
 plt.show()
+
+import dionysus as d
+
+f = d.fill_rips(X, 2, 1)
+p = d.homology_persistence(f)
+dgms = d.init_diagrams(p, f)
+# d.plot.plot_diagram(dgms[0], show = True)
+# d.plot.plot_diagram(dgms[1], show = True)
+d.plot.plot_bars(dgms[0], show = True)
+d.plot.plot_bars(dgms[1], show = True)
