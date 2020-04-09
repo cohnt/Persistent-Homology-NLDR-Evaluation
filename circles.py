@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn import manifold, datasets
 
-n_points = 500
-Y, color = datasets.make_circles(n_points, random_state=1, factor=0.5, noise=0.05)
+n_points = 100
+Y, color = datasets.make_circles(n_points, random_state=1, factor=0.5, noise=0)
 
 fig, ax = plt.subplots()
 ax.scatter(Y[:,0], Y[:,1], c=color, cmap=plt.cm.Spectral)
@@ -12,7 +12,7 @@ ax.scatter(Y[:,0], Y[:,1], c=color, cmap=plt.cm.Spectral)
 
 import dionysus as d
 
-max_epsilon = 0.4
+max_epsilon = 1
 k_skeleton = 3
 
 f_1 = d.fill_rips(Y, k_skeleton, max_epsilon)
