@@ -15,24 +15,17 @@ import dionysus as d
 max_epsilon = 1
 k_skeleton = 3
 
-f_1 = d.fill_rips(Y, k_skeleton, max_epsilon)
-p_1 = d.homology_persistence(f_1)
-dgms_1 = d.init_diagrams(p_1, f_1)
-# # d.plot.plot_diagram(dgms[0], show = True)
-# # d.plot.plot_diagram(dgms[1], show = True)
-# d.plot.plot_bars(dgms[0], show = True)
-# d.plot.plot_bars(dgms[1], show = True)
+f = d.fill_rips(Y, k_skeleton, max_epsilon)
+p = d.homology_persistence(f)
+dgms = d.init_diagrams(p, f)
 
-f_2 = d.fill_rips(Y, k_skeleton, max_epsilon)
-p_2 = d.homology_persistence(f_2)
-dgms_2 = d.init_diagrams(p_2, f_2)
+fig, axes = plt.subplots(nrows=2, ncols=2)
+d.plot.plot_diagram(dgms[0], ax=axes[0,0], show=False)
+d.plot.plot_diagram(dgms[1], ax=axes[0,1], show=False)
+d.plot.plot_bars(dgms[0], ax=axes[1,0], show=False)
+d.plot.plot_bars(dgms[1], ax=axes[1,1], show=False)
 
-for which_diagram in [0, 1]:
-	fig, axes = plt.subplots(nrows=2, ncols=2)
-	d.plot.plot_diagram(dgms_1[which_diagram], ax=axes[0,0], show=False)
-	d.plot.plot_diagram(dgms_2[which_diagram], ax=axes[0,1], show=False)
-	d.plot.plot_bars(dgms_1[which_diagram], ax=axes[1,0], show=False)
-	d.plot.plot_bars(dgms_2[which_diagram], ax=axes[1,1], show=False)
-	fig.suptitle("Dimension %d" % which_diagram)
+axes[0,0].set_title("Dimension 0")
+axes[0,1].set_title("Dimension 1")
 
 plt.show()
