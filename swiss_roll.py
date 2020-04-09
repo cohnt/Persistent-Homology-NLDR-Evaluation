@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn import manifold, datasets
 
-n_points = 2000
-X, color = datasets.make_swiss_roll(n_points)
-n_neighbors = 12
+n_points = 500
+X, color = datasets.make_swiss_roll(n_points, random_state=1)
+n_neighbors = 6
 n_components = 2
 
 method = manifold.Isomap(n_neighbors, n_components)
