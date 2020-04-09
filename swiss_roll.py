@@ -13,7 +13,7 @@ Y = method.fit_transform(X)
 
 fig, ax = plt.subplots()
 ax.scatter(Y[:,0], Y[:,1], c=color, cmap=plt.cm.Spectral)
-plt.show()
+# plt.show()
 
 import dionysus as d
 

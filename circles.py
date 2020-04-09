@@ -8,7 +8,7 @@ Y, color = datasets.make_circles(n_points, random_state=1, factor=0.5, noise=0.0
 
 fig, ax = plt.subplots()
 ax.scatter(Y[:,0], Y[:,1], c=color, cmap=plt.cm.Spectral)
-plt.show()
+# plt.show()
 
 import dionysus as d
 
