@@ -17,7 +17,10 @@ plt.show()
 
 import dionysus as d
 
-f_1 = d.fill_rips(X, 2, 1)
+max_epsilon = 5
+k_skeleton = n_neighbors
+
+f_1 = d.fill_rips(X, k_skeleton, max_epsilon)
 p_1 = d.homology_persistence(f_1)
 dgms_1 = d.init_diagrams(p_1, f_1)
 # # d.plot.plot_diagram(dgms[0], show = True)
@@ -25,7 +28,7 @@ dgms_1 = d.init_diagrams(p_1, f_1)
 # d.plot.plot_bars(dgms[0], show = True)
 # d.plot.plot_bars(dgms[1], show = True)
 
-f_2 = d.fill_rips(Y, n_neighbors, 1)
+f_2 = d.fill_rips(Y, k_skeleton, max_epsilon)
 p_2 = d.homology_persistence(f_2)
 dgms_2 = d.init_diagrams(p_2, f_2)
 
